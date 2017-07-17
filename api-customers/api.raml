@@ -1,0 +1,29 @@
+#%RAML 1.0
+
+title: customers
+version: 0.1
+baseUri: http://www.miejemplo.com/customers/v00
+
+uses:
+  customer: types/customer.raml
+
+/customers/{customer-id}:
+  description: Este metodo realiza la consulta puntual de un cliente.
+
+  uriParameters:
+    customer-id:
+      description: Identificador del cliente.
+      type: string
+      example: "12345678909876543"
+  get:
+    description:
+
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/customers/200_get.json
+            type: object
+            properties:
+              data:
+                type: customer.customer

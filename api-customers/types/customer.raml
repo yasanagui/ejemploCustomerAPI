@@ -1,0 +1,16 @@
+#%RAML 1.0 Library
+
+types:
+  customer:
+    type: object
+    description: |
+      API que gestiona los clientes.
+    properties:
+      id:
+        type: string
+        description: Identificador de un cliente.
+        required: false
+      name:
+        type: string
+        description: Nombre del cliente.
+        required: false
